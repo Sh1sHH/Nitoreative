@@ -1,106 +1,90 @@
+'use client'
+
 import React from 'react';
-import { 
-  Facebook, Twitter, Instagram, Linkedin, ArrowUp 
-} from 'lucide-react';
+import { Facebook, Linkedin, Instagram } from 'lucide-react';
 
-const Footer: React.FC = () => {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
-
+const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white pt-16 pb-8">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          <div>
-            <div className="mb-6">
-              <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                PixelPulse
-              </span>
+    <footer className="bg-primary text-dark py-12 mt-16 relative">
+      {/* Diagonal cut effect */}
+      <div className="absolute -top-16 left-0 right-0 h-16 bg-dark overflow-hidden">
+        <div className="w-full h-32 bg-primary -rotate-3 origin-top-left transform translate-y-16"></div>
+      </div>
+
+      <div className="container mx-auto px-4 md:px-8 flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+        {/* Logo Section - Left */}
+        <div className="md:w-1/4">
+          <div className="flex items-center">
+            <div className="bg-dark rounded-full w-16 h-16 flex items-center justify-center mr-4">
+              <span className="text-primary text-2xl font-bold">N</span>
             </div>
-            <p className="text-gray-400 mb-6">
-              Transforming brands through innovative digital strategies and creative solutions.
-            </p>
-            <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-purple-600 transition-colors duration-300">
-                <Facebook size={18} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 transition-colors duration-300">
-                <Twitter size={18} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 transition-colors duration-300">
-                <Instagram size={18} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-700 transition-colors duration-300">
-                <Linkedin size={18} />
-              </a>
+            <div>
+              <h3 className="text-dark font-bold uppercase text-xl">Nitoreative</h3>
+              <p className="text-dark/80 text-sm uppercase">CREATIVE AGENCY</p>
             </div>
           </div>
-          
-          <div>
-            <h4 className="text-lg font-bold mb-4">Services</h4>
-            <ul className="space-y-2">
-              <li><a href="#services" className="text-gray-400 hover:text-white transition-colors duration-300">Social Media Management</a></li>
-              <li><a href="#services" className="text-gray-400 hover:text-white transition-colors duration-300">Content Creation</a></li>
-              <li><a href="#services" className="text-gray-400 hover:text-white transition-colors duration-300">Website Development</a></li>
-              <li><a href="#services" className="text-gray-400 hover:text-white transition-colors duration-300">Brand Strategy</a></li>
-              <li><a href="#services" className="text-gray-400 hover:text-white transition-colors duration-300">Digital Marketing</a></li>
+        </div>
+
+        {/* Menu and Address Section with FOLLOW - Middle Left */}
+        <div className="md:w-1/5 flex flex-col">
+          <nav className="mb-6">
+            <ul className="space-y-1">
+              <li><a href="#" className="text-dark font-semibold uppercase">WHAT WE DO</a></li>
+              <li><a href="#" className="text-dark font-semibold uppercase">WORKS</a></li>
+              <li><a href="#" className="text-dark font-semibold uppercase">ABOUT</a></li>
+              <li><a href="#" className="text-dark font-semibold uppercase">CONTACT</a></li>
+              <li><a href="#" className="text-dark font-semibold uppercase">CAREER</a></li>
             </ul>
-          </div>
-          
-          <div>
-            <h4 className="text-lg font-bold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li><a href="#portfolio" className="text-gray-400 hover:text-white transition-colors duration-300">Portfolio</a></li>
-              <li><a href="#testimonials" className="text-gray-400 hover:text-white transition-colors duration-300">Testimonials</a></li>
-              <li><a href="#pricing" className="text-gray-400 hover:text-white transition-colors duration-300">Pricing</a></li>
-              <li><a href="#why-choose-us" className="text-gray-400 hover:text-white transition-colors duration-300">Why Choose Us</a></li>
-              <li><a href="#contact" className="text-gray-400 hover:text-white transition-colors duration-300">Contact</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="text-lg font-bold mb-4">Newsletter</h4>
-            <p className="text-gray-400 mb-4">
-              Subscribe to our newsletter for the latest updates and digital insights.
+          </nav>
+
+          <div className="space-y-1 mt-6">
+            <p className="text-dark font-normal">
+              <strong>A:</strong> İstiklal, Mithatpaşa Cd. No:13 Kat:2 Daire:2, 34762 Ümraniye/İstanbul
             </p>
-            <form className="mb-4">
-              <div className="flex">
-                <input 
-                  type="email" 
-                  placeholder="Your Email" 
-                  className="bg-gray-800 border border-gray-700 rounded-l-lg px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-purple-500"
-                />
-                <button 
-                  type="submit" 
-                  className="bg-gradient-to-r from-purple-600 to-blue-500 text-white px-4 rounded-r-lg"
-                >
-                  Subscribe
-                </button>
-              </div>
-            </form>
+            <p className="text-dark font-normal">
+              <strong>P:</strong> +90 (549) 593 20 12
+            </p>
+            <p className="text-dark font-normal">
+              <strong>P:</strong> +90 (507) 226 16 32
+            </p>
+            <p className="text-dark font-normal">
+              <strong>E:</strong> hello@nitoreative.com
+            </p>
+          </div>
+          
+          {/* FOLLOW Section - Below Contact Info */}
+          <div className="mt-8">
+            <h3 className="text-dark font-bold text-xl uppercase mb-3">FOLLOW</h3>
+            <div className="h-1 w-16 bg-dark mb-3"></div>
+            <div className="flex flex-col space-y-3">
+              <a href="#" className="text-dark hover:text-dark/70 transition-colors bg-primary/30 w-12 h-12 rounded-full flex items-center justify-center">
+                <Facebook size={20} />
+              </a>
+              <a href="#" className="text-dark hover:text-dark/70 transition-colors bg-primary/30 w-12 h-12 rounded-full flex items-center justify-center">
+                <Linkedin size={20} />
+              </a>
+              <a href="#" className="text-dark hover:text-dark/70 transition-colors bg-primary/30 w-12 h-12 rounded-full flex items-center justify-center">
+                <Instagram size={20} />
+              </a>
+            </div>
           </div>
         </div>
-        
-        <div className="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} PixelPulse Digital Agency. All rights reserved.
-          </p>
-          <div className="flex items-center space-x-4">
-            <a href="#" className="text-gray-500 hover:text-white text-sm transition-colors duration-300">Privacy Policy</a>
-            <a href="#" className="text-gray-500 hover:text-white text-sm transition-colors duration-300">Terms of Service</a>
-            <button 
-              onClick={scrollToTop}
-              className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-purple-600 transition-colors duration-300 ml-4"
-              aria-label="Scroll to top"
-            >
-              <ArrowUp size={18} />
-            </button>
+
+        {/* Phone Mockup - Right */}
+        <div className="md:w-5/12 flex items-center">
+          <div className="relative h-[550px] -ml-4 md:-ml-2">
+            <img 
+              src="/images/phoneIg.webp" 
+              alt="Telefon mockup" 
+              className="w-auto h-[550px] object-contain"
+            />
           </div>
         </div>
+      </div>
+
+      {/* Copyright */}
+      <div className="container mx-auto px-4 md:px-8 mt-8 text-center">
+        <p className="text-dark/80 text-sm">2025 Nitoreative Creative Agency | Tüm hakları saklıdır.</p>
       </div>
     </footer>
   );
