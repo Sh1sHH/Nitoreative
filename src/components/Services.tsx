@@ -1,21 +1,32 @@
 import React from 'react';
-import { Share2, Pen, Code, TrendingUp, Users, Eye, Database, MessageCircle } from 'lucide-react';
+import { Share2, Pen, Code, TrendingUp, Users, Eye } from 'lucide-react';
 
 interface ServiceCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
-  color: string;
+  features: string[];
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, color }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, features }) => {
   return (
-    <div className="group p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-      <div className={`w-14 h-14 mb-5 rounded-full flex items-center justify-center ${color} text-white`}>
+    <div className="group p-8 rounded-2xl transition-all duration-300 hover:bg-light/5">
+      <div className="text-primary mb-6">
         {icon}
       </div>
-      <h3 className="text-xl font-bold mb-3">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+      <h3 className="text-2xl font-semibold text-light mb-4">{title}</h3>
+      <p className="text-light/60 mb-6">{description}</p>
+      <ul className="space-y-3">
+        {features.map((feature, index) => (
+          <li 
+            key={index}
+            className="flex items-center gap-2 text-light/50"
+          >
+            <div className="w-1.5 h-1.5 rounded-full bg-primary/50" />
+            {feature}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
@@ -23,71 +34,92 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, col
 const Services: React.FC = () => {
   const services = [
     {
-      icon: <Share2 size={24} />,
-      title: "Social Media Management",
-      description: "Strategic content planning, posting, and community engagement to grow your brand's social presence.",
-      color: "bg-gradient-to-r from-purple-600 to-indigo-600"
+      icon: <Share2 className="w-12 h-12" />,
+      title: "Sosyal Medya Yönetimi",
+      description: "Markanızın sosyal medya varlığını güçlendirmek için stratejik içerik planlaması ve topluluk yönetimi.",
+      features: [
+        "İçerik Stratejisi",
+        "Topluluk Yönetimi",
+        "Performans Analizi",
+        "Reklam Yönetimi"
+      ]
     },
     {
-      icon: <Pen size={24} />,
-      title: "Content Creation",
-      description: "Engaging blog posts, articles, and copywriting tailored to your brand voice and audience.",
-      color: "bg-gradient-to-r from-blue-500 to-cyan-500"
+      icon: <Pen className="w-12 h-12" />,
+      title: "İçerik Üretimi",
+      description: "Markanızın sesini ve hedef kitlenizi yansıtan özgün içerikler oluşturuyoruz.",
+      features: [
+        "Blog Yazıları",
+        "Sosyal Medya İçerikleri",
+        "Kopya Yazarlığı",
+        "SEO Uyumlu İçerik"
+      ]
     },
     {
-      icon: <Code size={24} />,
-      title: "Website Development",
-      description: "Custom-built responsive websites with modern technology stacks for optimal performance.",
-      color: "bg-gradient-to-r from-orange-500 to-pink-500"
+      icon: <Code className="w-12 h-12" />,
+      title: "Web Geliştirme",
+      description: "Modern teknolojilerle özel, responsive ve performanslı web siteleri geliştiriyoruz.",
+      features: [
+        "Özel Web Tasarımı",
+        "E-ticaret Çözümleri",
+        "Web Uygulamaları",
+        "Bakım ve Destek"
+      ]
     },
     {
-      icon: <TrendingUp size={24} />,
-      title: "Digital Marketing",
-      description: "Data-driven campaigns across multiple channels to increase your brand visibility and conversions.",
-      color: "bg-gradient-to-r from-green-500 to-teal-500"
+      icon: <TrendingUp className="w-12 h-12" />,
+      title: "Dijital Pazarlama",
+      description: "Veriye dayalı kampanyalarla markanızın görünürlüğünü ve dönüşümlerini artırıyoruz.",
+      features: [
+        "SEO Optimizasyonu",
+        "Google Ads",
+        "Facebook Ads",
+        "E-posta Pazarlama"
+      ]
     },
     {
-      icon: <Users size={24} />,
-      title: "Brand Strategy",
-      description: "Comprehensive brand development to position your business effectively in the marketplace.",
-      color: "bg-gradient-to-r from-yellow-500 to-amber-500"
+      icon: <Users className="w-12 h-12" />,
+      title: "Marka Stratejisi",
+      description: "Markanızı pazarda etkili bir şekilde konumlandırmak için kapsamlı marka geliştirme.",
+      features: [
+        "Marka Kimliği",
+        "Pazar Araştırması",
+        "Konumlandırma",
+        "İletişim Stratejisi"
+      ]
     },
     {
-      icon: <Eye size={24} />,
-      title: "UI/UX Design",
-      description: "User-centered design approaches that create intuitive and engaging digital experiences.",
-      color: "bg-gradient-to-r from-purple-500 to-pink-500"
+      icon: <Eye className="w-12 h-12" />,
+      title: "UI/UX Tasarım",
+      description: "Kullanıcı odaklı tasarım yaklaşımıyla sezgisel ve etkileyici dijital deneyimler.",
+      features: [
+        "Kullanıcı Arayüzü",
+        "Kullanıcı Deneyimi",
+        "Prototipleme",
+        "Etkileşim Tasarımı"
+      ]
     }
   ];
 
   return (
-    <section id="services" className="py-20 bg-gray-50">
+    <section id="services" className="py-24 bg-dark">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block py-1 px-3 rounded-full bg-purple-100 text-purple-800 font-medium text-sm mb-3">
-            Our Services
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Transform Your Digital Presence
-          </h2>
-          <p className="text-gray-600">
-            We offer comprehensive digital solutions tailored to elevate your brand and engage your audience effectively.
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <ServiceCard key={index} {...service} />
-          ))}
-        </div>
-
-        <div className="mt-16 text-center">
-          <a 
-            href="#contact" 
-            className="inline-flex items-center justify-center bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg"
-          >
-            Discuss Your Project
-          </a>
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-semibold">
+              <span className="text-light">Hizmet</span>
+              <span className="text-primary">lerimiz</span>
+            </h2>
+            <p className="text-xl text-light/60 mt-6 max-w-2xl mx-auto">
+              Dijital dünyada markanızı öne çıkaracak çözümler
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <ServiceCard key={index} {...service} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

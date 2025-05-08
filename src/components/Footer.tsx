@@ -1,90 +1,114 @@
 'use client'
 
 import React from 'react';
-import { Facebook, Linkedin, Instagram } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-dark py-12 mt-16 relative">
-      {/* Diagonal cut effect */}
-      <div className="absolute -top-16 left-0 right-0 h-16 bg-dark overflow-hidden">
-        <div className="w-full h-32 bg-primary -rotate-3 origin-top-left transform translate-y-16"></div>
-      </div>
+    <footer className="relative bg-dark pt-16 pb-8">
+      
 
-      <div className="container mx-auto px-4 md:px-8 flex flex-col md:flex-row gap-8 md:gap-12 items-start">
-        {/* Logo Section - Left */}
-        <div className="md:w-1/4">
-          <div className="flex items-center">
-            <div className="bg-dark rounded-full w-16 h-16 flex items-center justify-center mr-4">
-              <span className="text-primary text-2xl font-bold">N</span>
+      <div className="container mx-auto px-4">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-8">
+          {/* Logo & Description */}
+          <div className="md:col-span-4 space-y-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                <span className="text-primary font-bold">N</span>
+              </div>
+              <div>
+                <h3 className="text-light font-bold">Nitoreative</h3>
+                <p className="text-light/60 text-sm">Creative Agency</p>
+              </div>
             </div>
-            <div>
-              <h3 className="text-dark font-bold uppercase text-xl">Nitoreative</h3>
-              <p className="text-dark/80 text-sm uppercase">CREATIVE AGENCY</p>
-            </div>
+            <p className="text-light/60 text-sm leading-relaxed">
+              Dijital dünyada markanızı öne çıkaracak minimal ve etkili çözümler sunuyoruz.
+            </p>
           </div>
-        </div>
 
-        {/* Menu and Address Section with FOLLOW - Middle Left */}
-        <div className="md:w-1/5 flex flex-col">
-          <nav className="mb-6">
-            <ul className="space-y-1">
-              <li><a href="#" className="text-dark font-semibold uppercase">WHAT WE DO</a></li>
-              <li><a href="#" className="text-dark font-semibold uppercase">WORKS</a></li>
-              <li><a href="#" className="text-dark font-semibold uppercase">ABOUT</a></li>
-              <li><a href="#" className="text-dark font-semibold uppercase">CONTACT</a></li>
-              <li><a href="#" className="text-dark font-semibold uppercase">CAREER</a></li>
+          {/* Quick Links */}
+          <div className="md:col-span-3">
+            <h4 className="text-light font-medium mb-4">Hızlı Linkler</h4>
+            <ul className="space-y-2">
+              <li>
+                <a href="#work" className="text-light/60 hover:text-primary text-sm transition-colors duration-300">
+                  İşlerimiz
+                </a>
+              </li>
+              <li>
+                <a href="#about" className="text-light/60 hover:text-primary text-sm transition-colors duration-300">
+                  Hakkımızda
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="text-light/60 hover:text-primary text-sm transition-colors duration-300">
+                  Hizmetlerimiz
+                </a>
+              </li>
             </ul>
-          </nav>
-
-          <div className="space-y-1 mt-6">
-            <p className="text-dark font-normal">
-              <strong>A:</strong> İstiklal, Mithatpaşa Cd. No:13 Kat:2 Daire:2, 34762 Ümraniye/İstanbul
-            </p>
-            <p className="text-dark font-normal">
-              <strong>P:</strong> +90 (549) 593 20 12
-            </p>
-            <p className="text-dark font-normal">
-              <strong>P:</strong> +90 (507) 226 16 32
-            </p>
-            <p className="text-dark font-normal">
-              <strong>E:</strong> hello@nitoreative.com
-            </p>
           </div>
-          
-          {/* FOLLOW Section - Below Contact Info */}
-          <div className="mt-8">
-            <h3 className="text-dark font-bold text-xl uppercase mb-3">FOLLOW</h3>
-            <div className="h-1 w-16 bg-dark mb-3"></div>
-            <div className="flex flex-col space-y-3">
-              <a href="#" className="text-dark hover:text-dark/70 transition-colors bg-primary/30 w-12 h-12 rounded-full flex items-center justify-center">
-                <Facebook size={20} />
+
+          {/* Contact Info */}
+          <div className="md:col-span-3">
+            <h4 className="text-light font-medium mb-4">İletişim</h4>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                <span className="text-light/60 text-sm">
+                  İstiklal, Mithatpaşa Cd. No:13 Kat:2 Daire:2, 34762 Ümraniye/İstanbul
+                </span>
+              </li>
+              <li className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-primary" />
+                <a href="tel:+905495932012" className="text-light/60 hover:text-primary text-sm transition-colors duration-300">
+                  +90 (549) 593 20 12
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-primary" />
+                <a href="mailto:hello@nitoreative.com" className="text-light/60 hover:text-primary text-sm transition-colors duration-300">
+                  hello@nitoreative.com
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Social Links */}
+          <div className="md:col-span-2">
+            <h4 className="text-light font-medium mb-4">Sosyal Medya</h4>
+            <div className="flex gap-3">
+              <a 
+                href="#" 
+                className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-dark transition-colors duration-300"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-4 h-4" />
               </a>
-              <a href="#" className="text-dark hover:text-dark/70 transition-colors bg-primary/30 w-12 h-12 rounded-full flex items-center justify-center">
-                <Linkedin size={20} />
+              <a 
+                href="#" 
+                className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-dark transition-colors duration-300"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-4 h-4" />
               </a>
-              <a href="#" className="text-dark hover:text-dark/70 transition-colors bg-primary/30 w-12 h-12 rounded-full flex items-center justify-center">
-                <Instagram size={20} />
+              <a 
+                href="#" 
+                className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-dark transition-colors duration-300"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-4 h-4" />
               </a>
             </div>
           </div>
         </div>
 
-        {/* Phone Mockup - Right */}
-        <div className="md:w-5/12 flex items-center">
-          <div className="relative h-[550px] -ml-4 md:-ml-2">
-            <img 
-              src="/images/phoneIg.webp" 
-              alt="Telefon mockup" 
-              className="w-auto h-[550px] object-contain"
-            />
-          </div>
+        {/* Copyright */}
+        <div className="pt-8 border-t border-light/5">
+          <p className="text-center text-light/40 text-sm">
+            © {new Date().getFullYear()} Nitoreative Creative Agency. Tüm hakları saklıdır.
+          </p>
         </div>
-      </div>
-
-      {/* Copyright */}
-      <div className="container mx-auto px-4 md:px-8 mt-8 text-center">
-        <p className="text-dark/80 text-sm">2025 Nitoreative Creative Agency | Tüm hakları saklıdır.</p>
       </div>
     </footer>
   );
