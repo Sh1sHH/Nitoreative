@@ -184,8 +184,8 @@ const AboutServices = () => {
                   href="#contact"
                   className="inline-flex items-center gap-2 text-light hover:text-primary transition-colors duration-300 group"
                 >
-                  <span>Daha Fazla Bilgi</span>
-                  <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                  
+                  
                 </a>
               </div>
             </div>
@@ -247,8 +247,7 @@ const AboutServices = () => {
                 href="#contact"
                 className="inline-flex items-center gap-2 text-light hover:text-primary transition-colors duration-300 group"
               >
-                <span>Detaylı Bilgi Alın</span>
-                <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                
               </a>
             </div>
           </div>

@@ -8,7 +8,7 @@ import WhyChooseUs from './components/WhyChooseUs';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
-import MarqueeLogosSimple, { MarqueeLogosWithTitle } from './components/MarqueeLogos';
+import MarqueeLogos from './components/MarqueeLogos';
 import AboutServices from './components/AboutServices';
 import ProjectShowcase from './components/ProjectShowcase';
 
@@ -23,9 +23,9 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <MarqueeLogosSimple />
+        <MarqueeLogos direction="left" />
         <AboutServices />
-        <MarqueeLogosWithTitle />
+        <MarqueeLogos direction="right" />
         <ProjectShowcase />
       </main>
       <Footer />
