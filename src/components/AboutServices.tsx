@@ -100,14 +100,14 @@ const AboutServices = () => {
               </mask>
               <linearGradient x1="0%" y1="0%" x2="0%" y2="100%" id="SvgjsLinearGradient1010">
                   <stop stop-color="rgba(251, 249, 0, 0)" offset="0"></stop>
-                  <stop stop-color="rgba(251, 249, 0, 0.15)" offset="0.5"></stop>
-                  <stop stop-color="rgba(251, 249, 0, 0.05)" offset="0.8"></stop>
+                  <stop stop-color="rgba(251, 249, 0, 0.08)" offset="0.5"></stop>
+                  <stop stop-color="rgba(251, 249, 0, 0.03)" offset="0.8"></stop>
                   <stop stop-color="rgba(251, 249, 0, 0)" offset="1"></stop>
               </linearGradient>
               <linearGradient x1="0%" y1="100%" x2="0%" y2="0%" id="SvgjsLinearGradient1011">
                   <stop stop-color="rgba(251, 249, 0, 0)" offset="0"></stop>
-                  <stop stop-color="rgba(251, 249, 0, 0.15)" offset="0.5"></stop>
-                  <stop stop-color="rgba(251, 249, 0, 0.05)" offset="0.8"></stop>
+                  <stop stop-color="rgba(251, 249, 0, 0.08)" offset="0.5"></stop>
+                  <stop stop-color="rgba(251, 249, 0, 0.03)" offset="0.8"></stop>
                   <stop stop-color="rgba(251, 249, 0, 0)" offset="1"></stop>
               </linearGradient>
           </defs>
@@ -127,35 +127,24 @@ const AboutServices = () => {
             {/* Main Content */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               {/* Left Side - Image & Stats */}
-              <div className="space-y-12">
+              <div>
                 {/* Image */}
-                <div className="relative overflow-hidden rounded-2xl bg-light/5 p-4">
-                  <img 
-                    src="/logos/logo2.png" 
-                    alt="Nitoreative Team" 
-                    className="w-full h-auto"
-                  />
-                </div>
-
-                {/* Stats */}
-                <div className="grid grid-cols-3 gap-8">
-                  <div className="text-center group">
-                    <p className="text-4xl font-semibold text-primary mb-2 transition-transform duration-300 group-hover:scale-110">150+</p>
-                    <p className="text-light/60">Mutlu Müşteri</p>
-                  </div>
-                  <div className="text-center group">
-                    <p className="text-4xl font-semibold text-primary mb-2 transition-transform duration-300 group-hover:scale-110">200+</p>
-                    <p className="text-light/60">Proje</p>
-                  </div>
-                  <div className="text-center group">
-                    <p className="text-4xl font-semibold text-primary mb-2 transition-transform duration-300 group-hover:scale-110">5+</p>
-                    <p className="text-light/60">Yıl Deneyim</p>
+                <div className="relative">
+                  {/* Decorative background */}
+                  <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 via-primary to-primary/30 rounded-[60px] blur-2xl opacity-50 animate-pulse"></div>
+                  {/* Image container */}
+                  <div className="relative overflow-hidden rounded-[60px] bg-light/5 p-4 border border-primary/20">
+                    <img 
+                      src="/logos/logo2.png" 
+                      alt="Nitoreative Team" 
+                      className="w-full h-auto rounded-[56px]"
+                    />
                   </div>
                 </div>
               </div>
 
               {/* Right Side - Content */}
-              <div className="space-y-8">
+              <div className="space-y-12">
                 <div className="space-y-6">
                   <p className="text-2xl text-light/90 leading-relaxed">
                     Nitoreative olarak, <span className="text-primary">yaratıcı çözümlerimizle</span> markaların dijital dünyada öne çıkmasını sağlıyoruz.
@@ -165,16 +154,21 @@ const AboutServices = () => {
                   </p>
                 </div>
 
-                <div className="space-y-6">
-                  <div className="bg-light/5 p-6 rounded-2xl">
-                    <h3 className="text-xl font-semibold text-primary mb-2">Vizyonumuz</h3>
-                    <p className="text-light/70">
+                <div className="space-y-12">
+                  <div className="group">
+                    <h3 className="text-3xl font-semibold text-primary mb-4 group-hover:translate-x-2 transition-transform duration-300">
+                      Vizyonumuz
+                    </h3>
+                    <p className="text-xl text-light/70 leading-relaxed">
                       Dijital dünyada markaların benzersiz hikayelerini anlatmak ve onları geleceğe taşımak.
                     </p>
                   </div>
-                  <div className="bg-light/5 p-6 rounded-2xl">
-                    <h3 className="text-xl font-semibold text-primary mb-2">Misyonumuz</h3>
-                    <p className="text-light/70">
+
+                  <div className="group">
+                    <h3 className="text-3xl font-semibold text-primary mb-4 group-hover:translate-x-2 transition-transform duration-300">
+                      Misyonumuz
+                    </h3>
+                    <p className="text-xl text-light/70 leading-relaxed">
                       Her projede yenilikçi bakış açımızı ve teknik uzmanlığımızı bir araya getirerek, benzersiz deneyimler yaratmak.
                     </p>
                   </div>

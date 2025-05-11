@@ -23,7 +23,7 @@ const FloatingTag = ({
 
 const Hero = () => {
   return (
-    <section className="min-h-screen bg-dark flex items-center justify-center relative overflow-hidden">
+    <section id="hero" className="min-h-screen bg-dark flex items-center justify-center relative overflow-hidden">
       {/* Interactive Wave Background */}
       <Waves 
         className="absolute inset-0 z-0"

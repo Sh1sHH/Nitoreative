@@ -10,7 +10,7 @@ const ProjectShowcase = () => {
   });
 
   return (
-    <section className="w-full">
+    <section id="work" className="w-full">
       <div className="grid grid-cols-2 md:grid-cols-4 [&>*]:border-0 gap-0">
         {images.map((image, index) => (
           <div 
