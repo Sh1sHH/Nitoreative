@@ -1,32 +1,190 @@
 'use client'
 
-import React from 'react';
+import React, { useState, useCallback } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+// Categories matching your services
+const categories = [
+  { id: 'all', name: 'Tümü' },
+  { id: 'web', name: 'Web Tasarım' },
+  { id: 'graphic', name: 'Grafik Tasarım' },
+  { id: 'video', name: 'Video İçerikleri' },
+  { id: 'qr', name: 'QR Menü' },
+  { id: 'social', name: 'Sosyal Medya' },
+];
+
+// Sample projects with categories
+const projects = [
+  {
+    id: 1,
+    title: 'Modern E-ticaret Sitesi',
+    category: 'web',
+    image: '/images/ornek2.jpg',
+    description: 'Responsive ve kullanıcı dostu e-ticaret platformu',
+  },
+  {
+    id: 2,
+    title: 'Kurumsal Kimlik Tasarımı',
+    category: 'graphic',
+    image: '/images/ornek2.jpg',
+    description: 'Marka kimliği ve görsel tasarım elemanları',
+  },
+  {
+    id: 3,
+    title: 'Tanıtım Videosu',
+    category: 'video',
+    image: '/images/ornek2.jpg',
+    description: 'Profesyonel şirket tanıtım videosu',
+  },
+  {
+    id: 4,
+    title: 'Restoran QR Menü',
+    category: 'qr',
+    image: '/images/ornek2.jpg',
+    description: 'Dijital menü sistemi tasarımı',
+  },
+  {
+    id: 5,
+    title: 'Sosyal Medya Kampanyası',
+    category: 'social',
+    image: '/images/ornek2.jpg',
+    description: 'Instagram ve Facebook kampanya yönetimi',
+  },
+  {
+    id: 6,
+    title: 'E-ticaret Web Sitesi',
+    category: 'web',
+    image: '/images/ornek2.jpg',
+    description: 'Online alışveriş platformu',
+  },
+  {
+    id: 7,
+    title: 'Logo Tasarımı',
+    category: 'graphic',
+    image: '/images/ornek2.jpg',
+    description: 'Minimalist logo ve marka tasarımı',
+  },
+  {
+    id: 8,
+    title: 'Ürün Videosu',
+    category: 'video',
+    image: '/images/ornek2.jpg',
+    description: 'Ürün tanıtım ve pazarlama videosu',
+  },
+  {
+    id: 9,
+    title: 'Kafe QR Menü',
+    category: 'qr',
+    image: '/images/ornek2.jpg',
+    description: 'Digital kafe menüsü uygulaması',
+  },
+  {
+    id: 10,
+    title: 'Sosyal Medya İçerikleri',
+    category: 'social',
+    image: '/images/ornek2.jpg',
+    description: 'Günlük sosyal medya içerik üretimi',
+  },
+  {
+    id: 11,
+    title: 'Portfolyo Web Sitesi',
+    category: 'web',
+    image: '/images/ornek2.jpg',
+    description: 'Kişisel portfolyo web sitesi',
+  },
+  {
+    id: 12,
+    title: 'Ambalaj Tasarımı',
+    category: 'graphic',
+    image: '/images/ornek2.jpg',
+    description: 'Ürün ambalaj ve etiket tasarımı',
+  },
+];
 
 const ProjectShowcase = () => {
-  // 12 adet görsel için array
-  const images = Array(12).fill({
-    src: '/images/ornek1.jpg',
-    alt: 'Proje görseli'
-  });
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
+
+  const filteredProjects = useCallback(() => {
+    if (selectedCategory === 'all') return projects;
+    return projects.filter(project => project.category === selectedCategory);
+  }, [selectedCategory]);
 
   return (
-    <section id="work" className="w-full">
-      <div className="grid grid-cols-2 md:grid-cols-4 [&>*]:border-0 gap-0">
-        {images.map((image, index) => (
-          <div 
-            key={index} 
-            className="relative overflow-hidden group w-full cursor-pointer"
-            style={{ aspectRatio: '3/4' }}
-          >
-            <img 
-              src={image.src} 
-              alt={image.alt} 
-              className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
-            />
-            {/* Hover Overlay */}
-            <div className="absolute inset-0 bg-black/0 transition-all duration-500 group-hover:bg-black/40" />
-          </div>
-        ))}
+    <section id="work" className="w-full py-20">
+      <div className="container mx-auto px-4">
+        {/* Section Title */}
+        <div className="text-center mb-12">
+          <h2 className="text-5xl md:text-6xl font-semibold mb-6">
+            <span className="text-light">Proje</span>
+            <span className="text-primary">lerimiz</span>
+          </h2>
+          <p className="text-light/60 text-lg max-w-2xl mx-auto">
+            Müşterilerimiz için gerçekleştirdiğimiz yaratıcı ve yenilikçi projelerimizden örnekler
+          </p>
+        </div>
+
+        {/* Category Filters */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {categories.map((category) => (
+            <button
+              key={category.id}
+              onClick={() => setSelectedCategory(category.id)}
+              className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300
+                ${selectedCategory === category.id
+                  ? 'bg-primary text-dark'
+                  : 'bg-light/5 text-light hover:bg-light/10'
+                }`}
+            >
+              {category.name}
+            </button>
+          ))}
+        </div>
+
+        {/* Projects Grid */}
+        <motion.div 
+          layout
+          className="grid grid-cols-2 md:grid-cols-4 gap-4"
+        >
+          <AnimatePresence>
+            {filteredProjects().map((project) => (
+              <motion.div
+                layout
+                key={project.id}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="relative overflow-hidden group cursor-pointer"
+                style={{ aspectRatio: '3/4' }}
+                onMouseEnter={() => setHoveredId(project.id)}
+                onMouseLeave={() => setHoveredId(null)}
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
+                />
+                
+                {/* Hover Overlay with Project Details */}
+                <div className={`absolute inset-0 bg-black/60 flex flex-col justify-end p-6 transition-all duration-300
+                  ${hoveredId === project.id ? 'opacity-100' : 'opacity-0'}`}
+                >
+                  <h3 className="text-white text-xl font-semibold mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-white/80 text-sm">
+                    {project.description}
+                  </p>
+                  <div className="absolute top-4 right-4 bg-primary/20 px-3 py-1 rounded-full">
+                    <span className="text-white text-sm">
+                      {categories.find(cat => cat.id === project.category)?.name}
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
   );

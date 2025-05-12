@@ -89,9 +89,9 @@ const Navbar = () => {
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-6">
-            <a href="#work" onClick={handleNavClick} className={getLinkClasses('work')}>İşlerimiz</a>
             <a href="#about" onClick={handleNavClick} className={getLinkClasses('about')}>Hakkımızda</a>
             <a href="#services" onClick={handleNavClick} className={getLinkClasses('services')}>Hizmetlerimiz</a>
+            <a href="#work" onClick={handleNavClick} className={getLinkClasses('work')}>İşlerimiz</a>
             <a 
               href="#contact" 
               onClick={handleNavClick}
