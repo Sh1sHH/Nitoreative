@@ -15,10 +15,10 @@ const Footer = () => {
           <div className="md:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                <span className="text-primary font-bold">N</span>
+                <span className="text-primary font-bold">E</span>
               </div>
               <div>
-                <h3 className="text-light font-bold">Nitoreative</h3>
+                <h3 className="text-light font-bold">Eleven</h3>
                 <p className="text-light/60 text-sm">Creative Agency</p>
               </div>
             </div>

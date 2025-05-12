@@ -16,7 +16,7 @@
   overflow: hidden;
   user-select: none;
   gap: var(--gap);
-  background: rgba(253, 215, 0, 0.884);
+  background: rgba(202, 207, 172, 0.884);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1.5rem 0;

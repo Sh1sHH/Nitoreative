@@ -111,17 +111,24 @@ const ProjectShowcase = () => {
   }, [selectedCategory]);
 
   return (
-    <section id="work" className="w-full py-20">
-      <div className="container mx-auto px-4">
+    <section id="work" className="w-full py-20 relative">
+      {/* Texture Background */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="/images/texture.jpg" 
+          alt="Background Texture" 
+          className="w-full h-full object-cover opacity-70"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-dark/90 via-dark/70 to-dark/90"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         {/* Section Title */}
         <div className="text-center mb-12">
-          <h2 className="text-5xl md:text-6xl font-semibold mb-6">
+          <h2 className="font-aclonica text-5xl md:text-6xl font-semibold mb-6">
             <span className="text-light">Proje</span>
-            <span className="text-primary">lerimiz</span>
+            <span className="text-[#395d64]">lerimiz</span>
           </h2>
-          <p className="text-light/60 text-lg max-w-2xl mx-auto">
-            Müşterilerimiz için gerçekleştirdiğimiz yaratıcı ve yenilikçi projelerimizden örnekler
-          </p>
         </div>
 
         {/* Category Filters */}
@@ -132,7 +139,7 @@ const ProjectShowcase = () => {
               onClick={() => setSelectedCategory(category.id)}
               className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300
                 ${selectedCategory === category.id
-                  ? 'bg-primary text-dark'
+                  ? 'bg-[#395d64] text-dark'
                   : 'bg-light/5 text-light hover:bg-light/10'
                 }`}
             >

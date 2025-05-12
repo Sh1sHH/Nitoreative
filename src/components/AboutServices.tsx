@@ -1,7 +1,26 @@
 'use client'
 
 import React from 'react';
-import { Globe, Palette, Video, QrCode, Share2, ArrowRight } from 'lucide-react';
+import { Globe, Palette, Video, QrCode, Share2 } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+// Add styles for vertical text
+const verticalTextStyles = `
+  .vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    white-space: nowrap;
+    letter-spacing: 0.2em;
+  }
+`;
+
+// Add style tag to head
+if (typeof document !== 'undefined') {
+  const style = document.createElement('style');
+  style.textContent = verticalTextStyles;
+  document.head.appendChild(style);
+}
 
 const services = [
   {
@@ -43,206 +62,239 @@ const services = [
 
 const AboutServices = () => {
   return (
-    <div className="relative bg-dark overflow-hidden">
-      {/* Background SVG for entire component */}
-      <div className="absolute inset-0 w-full h-full" style={{ zIndex: 0 }}>
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          version="1.1" 
-          xmlnsXlink="http://www.w3.org/1999/xlink"
-          width="100%" 
-          height="100%" 
-          preserveAspectRatio="none" 
-          viewBox="0 0 1440 1120"
-        >
-          <g mask="url(#SvgjsMask1009)" fill="none">
-              <rect width="1440" height="1120" x="0" y="0" fill="rgba(21, 21, 21, 1)"></rect>
-              <path d="M24 2L23 422" stroke-width="8" stroke="url(#SvgjsLinearGradient1010)" stroke-linecap="round" className="Down"></path>
-              <path d="M593 77L592 657" stroke-width="8" stroke="url(#SvgjsLinearGradient1011)" stroke-linecap="round" className="Up"></path>
-              <path d="M108 213L107 725" stroke-width="10" stroke="url(#SvgjsLinearGradient1011)" stroke-linecap="round" className="Up"></path>
-              <path d="M905 110L904 541" stroke-width="6" stroke="url(#SvgjsLinearGradient1010)" stroke-linecap="round" className="Down"></path>
-              <path d="M1372 119L1371 -122" stroke-width="10" stroke="url(#SvgjsLinearGradient1011)" stroke-linecap="round" className="Up"></path>
-              <path d="M10 22L9 -451" stroke-width="10" stroke="url(#SvgjsLinearGradient1011)" stroke-linecap="round" className="Up"></path>
-              <path d="M1170 149L1169 -146" stroke-width="10" stroke="url(#SvgjsLinearGradient1011)" stroke-linecap="round" className="Up"></path>
-              <path d="M1327 523L1326 248" stroke-width="6" stroke="url(#SvgjsLinearGradient1011)" stroke-linecap="round" className="Up"></path>
-              <path d="M541 117L540 -419" stroke-width="10" stroke="url(#SvgjsLinearGradient1010)" stroke-linecap="round" className="Down"></path>
-              <path d="M803 243L802 811" stroke-width="10" stroke="url(#SvgjsLinearGradient1010)" stroke-linecap="round" className="Down"></path>
-              <path d="M1415 172L1414 -401" stroke-width="8" stroke="url(#SvgjsLinearGradient1011)" stroke-linecap="round" className="Up"></path>
-              <path d="M209 334L208 904" stroke-width="8" stroke="url(#SvgjsLinearGradient1010)" stroke-linecap="round" className="Down"></path>
-              <path d="M1355 344L1354 127" stroke-width="6" stroke="url(#SvgjsLinearGradient1010)" stroke-linecap="round" className="Down"></path>
-              <path d="M92 346L91 98" stroke-width="6" stroke="url(#SvgjsLinearGradient1010)" stroke-linecap="round" className="Down"></path>
-              <path d="M1003 423L1002 914" stroke-width="6" stroke="url(#SvgjsLinearGradient1010)" stroke-linecap="round" className="Down"></path>
-              <path d="M377 257L376 831" stroke-width="10" stroke="url(#SvgjsLinearGradient1010)" stroke-linecap="round" className="Down"></path>
-              <path d="M1424 308L1423 871" stroke-width="6" stroke="url(#SvgjsLinearGradient1011)" stroke-linecap="round" className="Up"></path>
-              <path d="M653 294L652 72" stroke-width="8" stroke="url(#SvgjsLinearGradient1011)" stroke-linecap="round" className="Up"></path>
-              <path d="M617 462L616 98" stroke-width="6" stroke="url(#SvgjsLinearGradient1010)" stroke-linecap="round" className="Down"></path>
-              <path d="M649 301L648 143" stroke-width="8" stroke="url(#SvgjsLinearGradient1010)" stroke-linecap="round" className="Down"></path>
-              <path d="M1257 466L1256 1025" stroke-width="10" stroke="url(#SvgjsLinearGradient1011)" stroke-linecap="round" className="Up"></path>
-              <path d="M694 313L693 851" stroke-width="10" stroke="url(#SvgjsLinearGradient1010)" stroke-linecap="round" className="Down"></path>
-              <path d="M749 377L748 216" stroke-width="6" stroke="url(#SvgjsLinearGradient1011)" stroke-linecap="round" className="Up"></path>
-              <path d="M578 152L577 -395" stroke-width="8" stroke="url(#SvgjsLinearGradient1011)" stroke-linecap="round" className="Up"></path>
-              <path d="M598 138L597 -345" stroke-width="10" stroke="url(#SvgjsLinearGradient1011)" stroke-linecap="round" className="Up"></path>
-              <path d="M194 263L193 617" stroke-width="6" stroke="url(#SvgjsLinearGradient1010)" stroke-linecap="round" className="Down"></path>
-              <path d="M717 505L716 213" stroke-width="10" stroke="url(#SvgjsLinearGradient1011)" stroke-linecap="round" className="Up"></path>
-              <path d="M430 294L429 831" stroke-width="6" stroke="url(#SvgjsLinearGradient1010)" stroke-linecap="round" className="Down"></path>
-              <path d="M959 391L958 876" stroke-width="8" stroke="url(#SvgjsLinearGradient1010)" stroke-linecap="round" className="Down"></path>
-              <path d="M206 227L205 644" stroke-width="10" stroke="url(#SvgjsLinearGradient1010)" stroke-linecap="round" className="Down"></path>
-              <path d="M1001 347L1000 900" stroke-width="10" stroke="url(#SvgjsLinearGradient1011)" stroke-linecap="round" className="Up"></path>
-              <path d="M180 479L179 1020" stroke-width="8" stroke="url(#SvgjsLinearGradient1011)" stroke-linecap="round" className="Up"></path>
-              <path d="M1240 53L1239 441" stroke-width="8" stroke="url(#SvgjsLinearGradient1010)" stroke-linecap="round" className="Down"></path>
-              <path d="M1104 492L1103 106" stroke-width="10" stroke="url(#SvgjsLinearGradient1010)" stroke-linecap="round" className="Down"></path>
-              <path d="M370 397L369 138" stroke-width="10" stroke="url(#SvgjsLinearGradient1010)" stroke-linecap="round" className="Down"></path>
-              <path d="M1038 297L1037 -233" stroke-width="8" stroke="url(#SvgjsLinearGradient1010)" stroke-linecap="round" className="Down"></path>
-          </g>
-          <defs>
-              <mask id="SvgjsMask1009">
-                  <rect width="1440" height="1120" fill="#ffffff"></rect>
-              </mask>
-              <linearGradient x1="0%" y1="0%" x2="0%" y2="100%" id="SvgjsLinearGradient1010">
-                  <stop stop-color="rgba(251, 249, 0, 0)" offset="0"></stop>
-                  <stop stop-color="rgba(251, 249, 0, 0.08)" offset="0.5"></stop>
-                  <stop stop-color="rgba(251, 249, 0, 0.03)" offset="0.8"></stop>
-                  <stop stop-color="rgba(251, 249, 0, 0)" offset="1"></stop>
-              </linearGradient>
-              <linearGradient x1="0%" y1="100%" x2="0%" y2="0%" id="SvgjsLinearGradient1011">
-                  <stop stop-color="rgba(251, 249, 0, 0)" offset="0"></stop>
-                  <stop stop-color="rgba(251, 249, 0, 0.08)" offset="0.5"></stop>
-                  <stop stop-color="rgba(251, 249, 0, 0.03)" offset="0.8"></stop>
-                  <stop stop-color="rgba(251, 249, 0, 0)" offset="1"></stop>
-              </linearGradient>
-          </defs>
-        </svg>
+    <div className="relative">
+      {/* Background Image Container */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="/images/aboutustexture.png" 
+          alt="Background Texture" 
+          className="w-full h-full object-cover opacity-70"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-dark/95 via-dark/10 to-dark/5"></div>
       </div>
 
       {/* About Section */}
-      <section className="relative py-24" id="about">
-        <div className="container mx-auto px-4 relative" style={{ zIndex: 1 }}>
+      <section className="relative py-24 z-10" id="about">
+        <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
-            {/* Section Header */}
-            <h2 className="text-5xl md:text-6xl font-semibold text-center mb-16">
-              <span className="text-primary">Biz</span>
-              <span className="text-light"> Kimiz?</span>
-            </h2>
-
-            {/* Main Content */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              {/* Left Side - Image & Stats */}
-              <div>
-                {/* Image */}
-                <div className="relative">
-                  {/* Decorative background */}
-                  <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 via-primary to-primary/30 rounded-[60px] blur-2xl opacity-50 animate-pulse"></div>
-                  {/* Image container */}
-                  <div className="relative overflow-hidden rounded-[60px] bg-light/5 p-4 border border-primary/20">
-                    <img 
-                      src="/logos/logo2.png" 
-                      alt="Nitoreative Team" 
-                      className="w-full h-auto rounded-[56px]"
-                    />
-                  </div>
+            {/* About Content */}
+            <div className="grid grid-cols-12 gap-8 lg:gap-12">
+              {/* Left Column - Image & Title */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                className="col-span-12 lg:col-span-5 space-y-6"
+              >
+                <div className="relative aspect-[3/6] overflow-hidden rounded-2xl">
+                  <img 
+                    src="/images/aboutus.png" 
+                    alt="About Us" 
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent"></div>
+                  <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="absolute inset-0 flex items-center justify-center"
+                  >
+                    <div className="flex flex-col items-center">
+                      <h2 className="vertical-text font-aclonica text-7xl md:text-8xl font-bold text-white opacity-90 mb-4">
+                        ABOUT
+                      </h2>
+                      <p className="vertical-text font-aclonica text-2xl md:text-4xl text-primary opacity-90">
+                        US
+                      </p>
+                    </div>
+                  </motion.div>
                 </div>
-              </div>
+              </motion.div>
 
-              {/* Right Side - Content */}
-              <div className="space-y-12">
-                <div className="space-y-6">
-                  <p className="text-2xl text-light/90 leading-relaxed">
-                    Nitoreative olarak, <span className="text-primary">yaratıcı çözümlerimizle</span> markaların dijital dünyada öne çıkmasını sağlıyoruz.
-                  </p>
-                  <p className="text-xl text-light/70 leading-relaxed">
-                    Her projede yenilikçi bakış açımızı ve teknik uzmanlığımızı bir araya getirerek, benzersiz deneyimler yaratıyoruz.
-                  </p>
-                </div>
-
-                <div className="space-y-12">
-                  <div className="group">
-                    <h3 className="text-3xl font-semibold text-primary mb-4 group-hover:translate-x-2 transition-transform duration-300">
-                      Vizyonumuz
+              {/* Right Column - Description */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="col-span-12 lg:col-span-7 flex flex-col justify-center space-y-12 lg:pl-12"
+              >
+                {/* Main Content */}
+                <div className="space-y-8">
+                  {/* Highlight Text */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    className="bg-light/5 p-8 rounded-2xl border border-primary/20 hover:border-primary/40 transition-all duration-300"
+                  >
+                    <h3 className="font-aclonica text-3xl md:text-4xl text-light/90 leading-relaxed">
+                      Nitoreative olarak, <span className="text-primary">yaratıcı çözümlerimizle</span> markaların dijital dünyada öne çıkmasını sağlıyoruz.
                     </h3>
-                    <p className="text-xl text-light/70 leading-relaxed">
-                      Dijital dünyada markaların benzersiz hikayelerini anlatmak ve onları geleceğe taşımak.
-                    </p>
-                  </div>
+                  </motion.div>
 
-                  <div className="group">
-                    <h3 className="text-3xl font-semibold text-primary mb-4 group-hover:translate-x-2 transition-transform duration-300">
-                      Misyonumuz
-                    </h3>
-                    <p className="text-xl text-light/70 leading-relaxed">
-                      Her projede yenilikçi bakış açımızı ve teknik uzmanlığımızı bir araya getirerek, benzersiz deneyimler yaratmak.
-                    </p>
+                  {/* Description Paragraphs */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.4 }}
+                      className="bg-light/5 p-6 rounded-xl border border-light/5 hover:border-light/10 transition-all duration-300"
+                    >
+                      <h4 className="text-primary font-semibold text-lg mb-3">Yenilikçi Yaklaşım</h4>
+                      <p className="text-light/70 leading-relaxed">
+                        Her projede yenilikçi bakış açımızı ve teknik uzmanlığımızı bir araya getirerek, benzersiz deneyimler yaratıyoruz. Müşterilerimizin vizyonlarını dijital dünyada hayata geçirirken, en son teknolojileri ve trend tasarım yaklaşımlarını kullanıyoruz.
+                      </p>
+                    </motion.div>
+
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.5 }}
+                      className="bg-light/5 p-6 rounded-xl border border-light/5 hover:border-light/10 transition-all duration-300"
+                    >
+                      <h4 className="text-primary font-semibold text-lg mb-3">Uzman Ekip</h4>
+                      <p className="text-light/70 leading-relaxed">
+                        Ekibimiz, yaratıcı tasarımcılar, deneyimli geliştiriciler ve stratejik düşünürlerden oluşuyor. Her projede, markanızın benzersiz kimliğini yansıtacak çözümler üretmek için tutkuyla çalışıyoruz.
+                      </p>
+                    </motion.div>
                   </div>
                 </div>
 
-                <a 
-                  href="#contact"
-                  className="inline-flex items-center gap-2 text-light hover:text-primary transition-colors duration-300 group"
+                {/* Stats Section */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                  className="grid grid-cols-3 gap-6"
                 >
-                  
-                  
-                </a>
-              </div>
+                  <div className="group bg-light/5 p-6 rounded-xl border border-primary/10 hover:border-primary/30 transition-all duration-300">
+                    <div className="flex flex-col items-center">
+                      <h4 className="text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">250+</h4>
+                      <p className="text-light/70 font-medium">Proje</p>
+                    </div>
+                    <div className="mt-3 h-1 w-full bg-light/10 rounded-full overflow-hidden">
+                      <div className="h-full w-full bg-primary/20 group-hover:bg-primary/40 transition-all duration-300"></div>
+                    </div>
+                  </div>
+
+                  <div className="group bg-light/5 p-6 rounded-xl border border-primary/10 hover:border-primary/30 transition-all duration-300">
+                    <div className="flex flex-col items-center">
+                      <h4 className="text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">180+</h4>
+                      <p className="text-light/70 font-medium">Müşteri</p>
+                    </div>
+                    <div className="mt-3 h-1 w-full bg-light/10 rounded-full overflow-hidden">
+                      <div className="h-full w-3/4 bg-primary/20 group-hover:bg-primary/40 transition-all duration-300"></div>
+                    </div>
+                  </div>
+
+                  <div className="group bg-light/5 p-6 rounded-xl border border-primary/10 hover:border-primary/30 transition-all duration-300">
+                    <div className="flex flex-col items-center">
+                      <h4 className="text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">98%</h4>
+                      <p className="text-light/70 font-medium">Memnuniyet</p>
+                    </div>
+                    <div className="mt-3 h-1 w-full bg-light/10 rounded-full overflow-hidden">
+                      <div className="h-full w-[98%] bg-primary/20 group-hover:bg-primary/40 transition-all duration-300"></div>
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="relative py-24" id="services">
-        <div className="container mx-auto px-4 relative" style={{ zIndex: 1 }}>
+      <section className="relative py-24 z-10" id="services">
+        {/* Services Background Image Container */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/images/servicestexture.png" 
+            alt="Services Background Texture" 
+            className="w-full h-full object-cover opacity-70"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-dark/95 via-dark/10 to-dark/5"></div>
+        </div>
+
+        <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
-            {/* Section Header */}
-            <div className="text-center mb-16">
-              <h2 className="text-5xl md:text-6xl font-semibold">
-                <span className="text-light">Hizmet</span>
-                <span className="text-primary">lerimiz</span>
-              </h2>
-              <p className="text-xl text-light/60 mt-6 max-w-2xl mx-auto">
-                Dijital dünyada markanızı öne çıkaracak çözümler
-              </p>
-            </div>
-            
-            {/* Services Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {services.map((service) => {
-                const Icon = service.icon;
-                return (
-                  <div 
-                    key={service.id}
-                    className="group p-8 rounded-2xl transition-all duration-300 hover:bg-light/5"
-                  >
-                    <Icon className="w-12 h-12 text-primary mb-6" />
-                    
-                    <h3 className="text-2xl font-semibold text-light mb-4">
-                      {service.title}
-                    </h3>
-                    <p className="text-light/60 mb-6">
-                      {service.description}
-                    </p>
-
-                    <ul className="space-y-3">
-                      {service.features.map((feature, i) => (
-                        <li 
-                          key={i}
-                          className="flex items-center gap-2 text-light/50"
-                        >
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary/50" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                );
-              })}
-            </div>
-
-            <div className="mt-16 text-center">
-              <a 
-                href="#contact"
-                className="inline-flex items-center gap-2 text-light hover:text-primary transition-colors duration-300 group"
+            {/* Services Content */}
+            <div className="grid grid-cols-12 gap-8 lg:gap-12">
+              {/* Left Column - Content */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                className="col-span-12 lg:col-span-7 flex flex-col justify-center space-y-12 order-2 lg:order-1"
               >
-                
-              </a>
+                {/* Services Grid */}
+                <div className="grid grid-cols-2 gap-6">
+                  {services.map((service, index) => {
+                    const Icon = service.icon;
+                    return (
+                      <motion.div
+                        key={service.id}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: index * 0.1 }}
+                        className="group p-6 rounded-2xl bg-light/5 backdrop-blur-sm hover:bg-light/10 transition-all duration-300 border border-transparent hover:border-primary/20"
+                      >
+                        <Icon className="w-10 h-10 text-primary mb-4 group-hover:scale-110 transition-transform duration-300" />
+                        
+                        <h3 className="text-xl font-semibold text-light mb-3 group-hover:text-primary transition-colors duration-300">
+                          {service.title}
+                        </h3>
+                        <p className="text-light/60 text-sm mb-4">
+                          {service.description}
+                        </p>
+
+                        <ul className="space-y-2">
+                          {service.features.map((feature, i) => (
+                            <li 
+                              key={i}
+                              className="flex items-center gap-2 text-light/50 text-sm group-hover:text-light/70 transition-colors duration-300"
+                            >
+                              <div className="w-1 h-1 rounded-full bg-primary/50 group-hover:bg-primary transition-colors duration-300" />
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              </motion.div>
+
+              {/* Right Column - Image & Title */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="col-span-12 lg:col-span-5 space-y-6 order-1 lg:order-2"
+              >
+                <div className="relative aspect-[3/6] overflow-hidden rounded-2xl">
+                  <img 
+                    src="/images/services.png" 
+                    alt="Our Services" 
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent"></div>
+                  <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="absolute inset-0 flex items-center justify-center"
+                  >
+                    <div className="flex flex-col items-center">
+                      <h2 className="vertical-text font-aclonica text-7xl md:text-8xl font-bold text-white opacity-90 mb-4">
+                        SERVICES
+                      </h2>
+                      <p className="vertical-text font-aclonica text-2xl md:text-4xl text-primary opacity-90">
+                        OUR
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+              </motion.div>
             </div>
           </div>
         </div>

@@ -14,6 +14,7 @@ export default {
       fontFamily: {
         sans: ['Inter var', 'sans-serif'],
         display: ['Monument Extended', 'sans-serif'],
+        aclonica: ['Aclonica', 'sans-serif'],
       },
       fontSize: {
         'display-large': ['4.5rem', { lineHeight: '1.1' }],
