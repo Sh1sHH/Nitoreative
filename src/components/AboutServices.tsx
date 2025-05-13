@@ -66,7 +66,7 @@ const AboutServices = () => {
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/images/aboutustexture.png" 
+          src="/images/aboutustexture_webp.webp" 
           alt="Background Texture" 
           className="w-full h-full object-cover opacity-70"
         />
@@ -88,7 +88,7 @@ const AboutServices = () => {
               >
                 <div className="relative aspect-[3/6] overflow-hidden rounded-2xl">
                   <img 
-                    src="/images/aboutus.png" 
+                    src="/images/aboutus_webp.webp" 
                     alt="About Us" 
                     className="w-full h-full object-cover"
                   />
@@ -116,87 +116,28 @@ const AboutServices = () => {
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="col-span-12 lg:col-span-7 flex flex-col justify-center space-y-12 lg:pl-12"
+                className="col-span-12 lg:col-span-7 flex flex-col justify-center lg:pl-12"
               >
                 {/* Main Content */}
-                <div className="space-y-8">
+                <div className="space-y-12">
                   {/* Highlight Text */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
-                    className="bg-light/5 p-8 rounded-2xl border border-primary/20 hover:border-primary/40 transition-all duration-300"
                   >
-                    <h3 className="font-aclonica text-3xl md:text-4xl text-light/90 leading-relaxed">
-                      Nitoreative olarak, <span className="text-primary">yaratıcı çözümlerimizle</span> markaların dijital dünyada öne çıkmasını sağlıyoruz.
+                    <h3 className="font-aclonica text-4xl md:text-5xl text-light/90 leading-relaxed mb-8">
+                      eleven olarak,
+                      <br />
+                      <span className="text-primary">yaratıcı </span> çözümlerimizle
+                      <br />
+                      markaların dijital dünyada öne çıkmasını sağlıyoruz.
                     </h3>
+                    <p className="text-light/70 text-lg leading-relaxed">
+                      Yenilikçi bakış açımız ve uzman ekibimizle, markanızın benzersiz kimliğini dijital dünyada en iyi şekilde yansıtıyoruz.
+                    </p>
                   </motion.div>
-
-                  {/* Description Paragraphs */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 0.4 }}
-                      className="bg-light/5 p-6 rounded-xl border border-light/5 hover:border-light/10 transition-all duration-300"
-                    >
-                      <h4 className="text-primary font-semibold text-lg mb-3">Yenilikçi Yaklaşım</h4>
-                      <p className="text-light/70 leading-relaxed">
-                        Her projede yenilikçi bakış açımızı ve teknik uzmanlığımızı bir araya getirerek, benzersiz deneyimler yaratıyoruz. Müşterilerimizin vizyonlarını dijital dünyada hayata geçirirken, en son teknolojileri ve trend tasarım yaklaşımlarını kullanıyoruz.
-                      </p>
-                    </motion.div>
-
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 0.5 }}
-                      className="bg-light/5 p-6 rounded-xl border border-light/5 hover:border-light/10 transition-all duration-300"
-                    >
-                      <h4 className="text-primary font-semibold text-lg mb-3">Uzman Ekip</h4>
-                      <p className="text-light/70 leading-relaxed">
-                        Ekibimiz, yaratıcı tasarımcılar, deneyimli geliştiriciler ve stratejik düşünürlerden oluşuyor. Her projede, markanızın benzersiz kimliğini yansıtacak çözümler üretmek için tutkuyla çalışıyoruz.
-                      </p>
-                    </motion.div>
-                  </div>
                 </div>
-
-                {/* Stats Section */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                  className="grid grid-cols-3 gap-6"
-                >
-                  <div className="group bg-light/5 p-6 rounded-xl border border-primary/10 hover:border-primary/30 transition-all duration-300">
-                    <div className="flex flex-col items-center">
-                      <h4 className="text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">250+</h4>
-                      <p className="text-light/70 font-medium">Proje</p>
-                    </div>
-                    <div className="mt-3 h-1 w-full bg-light/10 rounded-full overflow-hidden">
-                      <div className="h-full w-full bg-primary/20 group-hover:bg-primary/40 transition-all duration-300"></div>
-                    </div>
-                  </div>
-
-                  <div className="group bg-light/5 p-6 rounded-xl border border-primary/10 hover:border-primary/30 transition-all duration-300">
-                    <div className="flex flex-col items-center">
-                      <h4 className="text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">180+</h4>
-                      <p className="text-light/70 font-medium">Müşteri</p>
-                    </div>
-                    <div className="mt-3 h-1 w-full bg-light/10 rounded-full overflow-hidden">
-                      <div className="h-full w-3/4 bg-primary/20 group-hover:bg-primary/40 transition-all duration-300"></div>
-                    </div>
-                  </div>
-
-                  <div className="group bg-light/5 p-6 rounded-xl border border-primary/10 hover:border-primary/30 transition-all duration-300">
-                    <div className="flex flex-col items-center">
-                      <h4 className="text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">98%</h4>
-                      <p className="text-light/70 font-medium">Memnuniyet</p>
-                    </div>
-                    <div className="mt-3 h-1 w-full bg-light/10 rounded-full overflow-hidden">
-                      <div className="h-full w-[98%] bg-primary/20 group-hover:bg-primary/40 transition-all duration-300"></div>
-                    </div>
-                  </div>
-                </motion.div>
               </motion.div>
             </div>
           </div>
@@ -208,7 +149,7 @@ const AboutServices = () => {
         {/* Services Background Image Container */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="/images/servicestexture.png" 
+            src="/images/servicestexture_webp.webp" 
             alt="Services Background Texture" 
             className="w-full h-full object-cover opacity-70"
           />
@@ -273,7 +214,7 @@ const AboutServices = () => {
               >
                 <div className="relative aspect-[3/6] overflow-hidden rounded-2xl">
                   <img 
-                    src="/images/services.png" 
+                    src="/images/services_webp.webp" 
                     alt="Our Services" 
                     className="w-full h-full object-cover"
                   />

@@ -19,84 +19,84 @@ const projects = [
     id: 1,
     title: 'Modern E-ticaret Sitesi',
     category: 'web',
-    image: '/images/ornek2.jpg',
+    image: '/images/ornek2_webp.webp',
     description: 'Responsive ve kullanıcı dostu e-ticaret platformu',
   },
   {
     id: 2,
     title: 'Kurumsal Kimlik Tasarımı',
     category: 'graphic',
-    image: '/images/ornek2.jpg',
+    image: '/images/ornek2_webp.webp',
     description: 'Marka kimliği ve görsel tasarım elemanları',
   },
   {
     id: 3,
     title: 'Tanıtım Videosu',
     category: 'video',
-    image: '/images/ornek2.jpg',
+    image: '/images/ornek2_webp.webp',
     description: 'Profesyonel şirket tanıtım videosu',
   },
   {
     id: 4,
     title: 'Restoran QR Menü',
     category: 'qr',
-    image: '/images/ornek2.jpg',
+    image: '/images/ornek2_webp.webp',
     description: 'Dijital menü sistemi tasarımı',
   },
   {
     id: 5,
     title: 'Sosyal Medya Kampanyası',
     category: 'social',
-    image: '/images/ornek2.jpg',
+    image: '/images/ornek2_webp.webp',
     description: 'Instagram ve Facebook kampanya yönetimi',
   },
   {
     id: 6,
     title: 'E-ticaret Web Sitesi',
     category: 'web',
-    image: '/images/ornek2.jpg',
+    image: '/images/ornek2_webp.webp',
     description: 'Online alışveriş platformu',
   },
   {
     id: 7,
     title: 'Logo Tasarımı',
     category: 'graphic',
-    image: '/images/ornek2.jpg',
+    image: '/images/ornek2_webp.webp',
     description: 'Minimalist logo ve marka tasarımı',
   },
   {
     id: 8,
     title: 'Ürün Videosu',
     category: 'video',
-    image: '/images/ornek2.jpg',
+    image: '/images/ornek2_webp.webp',
     description: 'Ürün tanıtım ve pazarlama videosu',
   },
   {
     id: 9,
     title: 'Kafe QR Menü',
     category: 'qr',
-    image: '/images/ornek2.jpg',
+    image: '/images/ornek2_webp.webp',
     description: 'Digital kafe menüsü uygulaması',
   },
   {
     id: 10,
     title: 'Sosyal Medya İçerikleri',
     category: 'social',
-    image: '/images/ornek2.jpg',
+    image: '/images/ornek2_webp.webp',
     description: 'Günlük sosyal medya içerik üretimi',
   },
   {
     id: 11,
     title: 'Portfolyo Web Sitesi',
     category: 'web',
-    image: '/images/ornek2.jpg',
+    image: '/images/ornek2_webp.webp',
     description: 'Kişisel portfolyo web sitesi',
   },
   {
     id: 12,
     title: 'Ambalaj Tasarımı',
     category: 'graphic',
-    image: '/images/ornek2.jpg',
+    image: '/images/ornek2_webp.webp',
     description: 'Ürün ambalaj ve etiket tasarımı',
   },
 ];
@@ -115,11 +115,11 @@ const ProjectShowcase = () => {
       {/* Texture Background */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/images/texture.jpg" 
+          src="/images/texture_webp.webp" 
           alt="Background Texture" 
-          className="w-full h-full object-cover opacity-70"
+          className="w-full h-full object-cover opacity-100"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-dark/90 via-dark/70 to-dark/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-dark/50 via-dark/10 to-dark/50"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -127,7 +127,7 @@ const ProjectShowcase = () => {
         <div className="text-center mb-12">
           <h2 className="font-aclonica text-5xl md:text-6xl font-semibold mb-6">
             <span className="text-light">Proje</span>
-            <span className="text-[#395d64]">lerimiz</span>
+            <span className="text-[#5AECF6]">lerimiz</span>
           </h2>
         </div>
 
@@ -139,7 +139,7 @@ const ProjectShowcase = () => {
               onClick={() => setSelectedCategory(category.id)}
               className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300
                 ${selectedCategory === category.id
-                  ? 'bg-[#395d64] text-dark'
+                  ? 'bg-[#5AECF6] text-dark'
                   : 'bg-light/5 text-light hover:bg-light/10'
                 }`}
             >
